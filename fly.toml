@@ -1,0 +1,14 @@
+app = "flowise-me"
+primary_region = "ewr"
+
+[env]
+  FLOWISE_USERNAME = "admin"
+  FLOWISE_PASSWORD = "3Tomazeli9$"
+  BLOB_STORAGE_PATH = "/data"
+  DATABASE_PATH    = "/data"
+  SECRETKEY_PATH   = "/data"
+  APIKEY_PATH      = "/data"
+
+[[mounts]]
+  source = "flowise_data"
+  destination = "/data"

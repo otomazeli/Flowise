@@ -23,16 +23,16 @@ English | [繁體中文](./i18n/README-TW.md) | [简体中文](./i18n/README-ZH.
 
 ## 📚 Table of Contents
 
-- [⚡ Quick Start](#-quick-start)
-- [🐳 Docker](#-docker)
-- [👨‍💻 Developers](#-developers)
-- [🌱 Env Variables](#-env-variables)
-- [📖 Documentation](#-documentation)
-- [🌐 Self Host](#-self-host)
-- [☁️ Flowise Cloud](#️-flowise-cloud)
-- [🙋 Support](#-support)
-- [🙌 Contributing](#-contributing)
-- [📄 License](#-license)
+-   [⚡ Quick Start](#-quick-start)
+-   [🐳 Docker](#-docker)
+-   [👨‍💻 Developers](#-developers)
+-   [🌱 Env Variables](#-env-variables)
+-   [📖 Documentation](#-documentation)
+-   [🌐 Self Host](#-self-host)
+-   [☁️ Flowise Cloud](#️-flowise-cloud)
+-   [🙋 Support](#-support)
+-   [🙌 Contributing](#-contributing)
+-   [📄 License](#-license)
 
 ## ⚡Quick Start
 
@@ -64,18 +64,19 @@ Download and Install [NodeJS](https://nodejs.org/en/download) >= 18.15.0
 ### Docker Image
 
 1. Build the image locally:
-   
+
     ```bash
     docker build --no-cache -t flowise .
     ```
+
 2. Run image:
-   
+
     ```bash
     docker run -d --name flowise -p 3000:3000 flowise
     ```
 
 3. Stop image:
-   
+
     ```bash
     docker stop flowise
     ```
@@ -124,10 +125,24 @@ Flowise has 3 different modules in a single mono repository.
 
     <details>
     <summary>Exit code 134 (JavaScript heap out of memory)</summary>  
-      If you get this error when running the above `build` script, try increasing the Node.js heap size and run the script again:
+    If you get this error when running the above `build` script, try increasing the Node.js heap size and run the script again:
 
-        export NODE_OPTIONS="--max-old-space-size=4096"
-        pnpm build
+    ```bash
+    # macOS / Linux / Git Bash
+    export NODE_OPTIONS="--max-old-space-size=4096"
+
+    # Windows PowerShell
+    $env:NODE_OPTIONS="--max-old-space-size=4096"
+
+    # Windows CMD
+    set NODE_OPTIONS=--max-old-space-size=4096
+    ```
+
+    Then run:
+
+    ```bash
+    pnpm build
+    ```
 
     </details>
 
@@ -174,6 +189,10 @@ Deploy Flowise self-hosted in your existing infrastructure, we support various [
     -   [Railway](https://docs.flowiseai.com/configuration/deployment/railway)
 
         [![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/pn4G8S?referralCode=WVNPD9)
+
+    -   [Northflank](https://northflank.com/stacks/deploy-flowiseai)
+
+        [![Deploy to Northflank](https://assets.northflank.com/deploy_to_northflank_smm_36700fb050.svg)](https://northflank.com/stacks/deploy-flowiseai)
 
     -   [Render](https://docs.flowiseai.com/configuration/deployment/render)
 
